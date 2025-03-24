@@ -349,3 +349,50 @@ dotnet run
 ![image](https://github.com/user-attachments/assets/0878e200-0ce4-4043-ad87-a03ff4d08610)
 
 ![image](https://github.com/user-attachments/assets/30c4563f-f224-495a-b89d-4cb392f28b82)
+
+## 12. How to debug your C# Console application in VSCode
+
+First we have to modify the csproj file and add the following item in the project tag:
+
+```
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+```
+
+See the updated csproj file
+
+![image](https://github.com/user-attachments/assets/e18777a4-3ecd-4118-9fe1-88cbe244b279)
+
+Then we set the breakpoint in the code
+
+![image](https://github.com/user-attachments/assets/9aae4622-3369-4d97-abbb-b07f8eddba9d)
+
+Finally we select the Debug menu option 
+
+![image](https://github.com/user-attachments/assets/d8af3e06-0a68-4691-864f-566a1756d328)
+
+Or we can click on the Debug green triangle icon in the left hand side menu
+
+![image](https://github.com/user-attachments/assets/4368799c-d5dd-4a2d-8ae4-3c2b9967e83c)
+
+![image](https://github.com/user-attachments/assets/11a2ecf5-da1f-4366-a97f-0fe2397acad0)
+
+Now appears the Debug toolbar and we can start debut our code
+
+![image](https://github.com/user-attachments/assets/0f410f8f-e9ab-414b-b121-dccd8a1c39e2)
+
+We can inspect the variables content
+
+We select the variable name and we select the Add to Watch
+
+![image](https://github.com/user-attachments/assets/f89a2052-558e-4b48-92f4-7c9f82af812d)
+
+![image](https://github.com/user-attachments/assets/f1d94440-9112-455f-a4fd-62b9a7772a96)
+
+
+
+
+
