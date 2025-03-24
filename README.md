@@ -496,7 +496,7 @@ Console.WriteLine("EF10 feature demonstrations completed.");
 
 ## 11. Run the application in VSCode and verify the results
 
-Execute this command in the Terminal for running the application
+Execute this command in the **Terminal** for running the application
 
 ```
 dotnet run
@@ -508,13 +508,15 @@ Please select the soultion frame
 
 ![image](https://github.com/user-attachments/assets/0f3eb6e5-b9c9-4d03-804d-0e5fa71da580)
 
-Then we create a new csharp appsettings.json file
+Then we create a new csharp **appsettings.json** file
 
 ![image](https://github.com/user-attachments/assets/56b39f22-8ca7-4aa8-89f3-305948393f02)
 
 ![image](https://github.com/user-attachments/assets/719cfcf4-c500-419f-b098-20f5605011f7)
 
-We input the database string configuration in the appsettings.json file
+Copy from Azure the database string configuration in the **appsettings.json** file
+
+![image](https://github.com/user-attachments/assets/5775ba2d-c362-462e-bf32-bd97771eb962)
 
 ```json
 {
@@ -526,7 +528,7 @@ We input the database string configuration in the appsettings.json file
 
 ![image](https://github.com/user-attachments/assets/ce6fcfe2-5eb2-496d-9fe5-44060e2ff83d)
 
-We install the following Nuget package to configure the database connection from Program.cs file
+We install the following **Nuget package** to configure the database connection from **Program.cs** file
 
 ```
 dotnet add package Microsoft.Extensions.Hosting
