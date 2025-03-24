@@ -4,7 +4,7 @@ For more information about this post visit this site:
 
 https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-10.0/whatsnew#linq-and-sql-translation
 
-## Prerequisite: install .NET 10 
+## Prerrequisite: install .NET 10 
 
 We download .NET 10 from this website:
 
