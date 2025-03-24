@@ -79,11 +79,37 @@ SELECT TOP (1000) [Id]
 
 ## 3. Create a new C# Console application with dotnet
 
+We navigate in our hard disk to the location where we would like to create the new C# Console application
+
+Here's the dotnet command to create a new .NET 10 C# console application named EF10_Other_query_improvements:
+
+```
+dotnet new console -n EF10_Other_query_improvements -f net10.0
+```
+
+After creating the application we review the generated code in the Command Prompt:
+
+
 
 ## 4. Download and Install Visual Studio Code and open the C# console application
 
+Navigate to the VSCode web page and download it for Windows Operating System
+
+https://code.visualstudio.com/download
+
+![image](https://github.com/user-attachments/assets/08efd3c7-d1e5-422b-ad29-15b316de7ba5)
+
+Install VSCode double clicking on the downloaded file
+
+Navigate to the C# console application location and open it with this command
+
+```
+code .
+```
 
 ## 5. Install Nuget packages
+
+In VSCode in the Terminal window run these commands to install the Entity Framework Nuget packages
 
 
 
