@@ -277,6 +277,13 @@ We input the database string configuration in the appsettings.json file
 
 ![image](https://github.com/user-attachments/assets/ce6fcfe2-5eb2-496d-9fe5-44060e2ff83d)
 
+We install the following Nuget package to configure the database connection from Program.cs file
+
+```
+dotnet add package Microsoft.Extensions.Hosting
+```
+
+![image](https://github.com/user-attachments/assets/d94bf957-4260-47b4-a4eb-2cd875445135)
 
 
 
