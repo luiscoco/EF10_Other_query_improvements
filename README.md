@@ -147,7 +147,7 @@ SELECT TOP (1000) [Id]
   FROM [Ef10EventsDb].[dbo].[Attendees]
 ```
 
-![image](https://github.com/user-attachments/assets/177085fb-caf9-42ee-ab03-07310e0069e9)
+![image](https://github.com/user-attachments/assets/cd04b3e5-30af-4124-b5f6-f6c86a054583)
 
 ```sql
 SELECT TOP (1000) [Id]
@@ -157,7 +157,7 @@ SELECT TOP (1000) [Id]
   FROM [Ef10EventsDb].[dbo].[Events]
 ```
 
-![image](https://github.com/user-attachments/assets/45b835d9-8ca4-47cd-b558-aa3052d40ca1)
+![image](https://github.com/user-attachments/assets/73f00191-3532-4afc-9d86-90284ed32fdf)
 
 ## 4. Create a new C# Console application with dotnet
 
