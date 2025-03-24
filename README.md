@@ -72,7 +72,17 @@ https://learn.microsoft.com/en-us/ssms/download-sql-server-management-studio-ssm
 
 We connect to the SSMS with the password: Luiscoco123456
 
+Server type: Database Engine
 
+Server name: myserverluis.database.windows.net,1433
+
+Authentication:SQL Server Authentication
+
+Login: adminluis
+
+Password:Luiscoco123456
+
+![image](https://github.com/user-attachments/assets/97b1a886-5a93-4aaa-8ed8-cea5425c135c)
 
 ## 3. Create the Database and Tables with SSMS
 
