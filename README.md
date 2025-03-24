@@ -112,6 +112,8 @@ Server=tcp:myserverluis.database.windows.net,1433;Initial Catalog=Ef10EventsDb;P
 
 ![image](https://github.com/user-attachments/assets/8b595829-5903-4764-bf9b-88d0c432bd3c)
 
+![image](https://github.com/user-attachments/assets/1dd2351d-3db6-4871-8231-7c3ce4f7f2cd)
+
 ## 3. Create the Database and Tables with SSMS
 
 We run this sql query for creating a new database
