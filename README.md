@@ -286,7 +286,31 @@ dotnet add package Microsoft.Extensions.Hosting
 ![image](https://github.com/user-attachments/assets/d94bf957-4260-47b4-a4eb-2cd875445135)
 
 
+We input the following additional code in Program.cs:
 
+```csharp
+using EF10_Other_query_improvements.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+
+var host = Host.CreateDefaultBuilder(args)
+    .ConfigureAppConfiguration((context, config) =>
+    {
+        config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+    })
+    .ConfigureServices((context, services) =>
+    {
+        var connectionString = context.Configuration.GetConnectionString("DefaultConnection");
+        services.AddDbContext<AppDbContext>(options =>
+            options.UseSqlServer(connectionString));
+    })
+    .Build();
+
+using var scope = host.Services.CreateScope();
+var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+```
 
 
 
