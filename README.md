@@ -22,6 +22,8 @@ We connect to the SSMS with the password: Luiscoco123456
 
 ## 3. Create the Database and Tables with SSMS
 
+We run this sql query for creating a new database
+
 ```sql
 -- Create the database
 CREATE DATABASE Ef10EventsDb;
@@ -30,7 +32,11 @@ GO
 -- Use the newly created database
 USE Ef10EventsDb;
 GO
+```
 
+We run this sql query for creating the new tables
+
+```sql
 -- Create Events table
 CREATE TABLE Events (
     Id INT PRIMARY KEY IDENTITY(1,1),
@@ -46,7 +52,11 @@ CREATE TABLE Attendees (
     EventId INT NOT NULL,
     FOREIGN KEY (EventId) REFERENCES Events(Id)
 );
+```
 
+We run this sql query for populating the new tables with data
+
+```sql
 -- Insert sample data into Events
 INSERT INTO Events (City, EventDate, EventTime) VALUES
 ('Madrid', '2025-05-01', '09:00:00.1234567'),
