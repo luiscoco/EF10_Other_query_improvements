@@ -119,11 +119,69 @@ In VSCode in the Terminal window run these commands to install the Entity Framew
 
 ## 7. Input the Models source code
 
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Text;
 
+namespace EF10_Other_query_improvements.Models
+{
+    public class Attendees
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+    }
+}
+```
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace EF10_Other_query_improvements.Models
+{
+    // Entity Definition
+    public class Event
+    {
+        public int Id { get; set; }
+        public string City { get; set; }
+        public DateOnly EventDate { get; set; }
+        public TimeOnly EventTime { get; set; }
+        public ICollection<Attendees> Attendees { get; set; }
+    }
+}
+```
 
 ## 8. Input the Data source code
 
+```csharp
+using EF10_Other_query_improvements.Models;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
+namespace EF10_Other_query_improvements.Data
+{
+    // DbContext Definition
+    public class AppDbContext : DbContext
+    {
+        public DbSet<Event> Events { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Server=localhost,1433;Database=Ef10EventsDb;User Id=sa;Password=Luiscoco123456;TrustServerCertificate=True;");
+            optionsBuilder.LogTo(Console.WriteLine);
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Event>().OwnsMany(e => e.Attendees);
+        }
+    }
+}
+```
 
 ## 9. Input the Program.cs source code
 
