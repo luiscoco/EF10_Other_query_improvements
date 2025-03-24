@@ -1,4 +1,4 @@
-# Entity Framework v10: Other Query Improvements
+# Entity Framework v10: Other Query Improvements (.NET10 and Visual Studio Code)
 
 For more information about this post visit this site:
 
@@ -74,3 +74,42 @@ SELECT TOP (1000) [Id]
       ,[EventTime]
   FROM [Ef10EventsDb].[dbo].[Events]
 ```
+
+## 3. Create a new C# Console application with dotnet
+
+
+## 4. Download and Install Visual Studio Code and open the C# console application
+
+
+## 5. Install Nuget packages
+
+
+
+## 6. Create the folders and files structure
+
+
+
+## 7. Input the Models source code
+
+
+
+## 8. Input the Data source code
+
+
+
+## 9. Input the Program.cs source code
+
+
+
+## 10. Run the application in VSCode and verify the results
+
+
+
+
+
+
+
+
+
+
+
