@@ -103,9 +103,7 @@ Here's the dotnet command to create a new .NET 10 C# console application named E
 dotnet new console -n EF10_Other_query_improvements -f net10.0
 ```
 
-After creating the application we review the generated code in the Command Prompt:
-
-
+After creating the application we review the generated code in the Command Prompt
 
 ## 4. Download and Install Visual Studio Code and open the C# console application
 
