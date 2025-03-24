@@ -98,6 +98,8 @@ USE Ef10EventsDb;
 GO
 ```
 
+![image](https://github.com/user-attachments/assets/7522b332-9968-4575-bcd2-cfc9ab1ce7a6)
+
 We run this sql query for creating the new tables
 
 ```sql
