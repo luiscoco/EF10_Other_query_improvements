@@ -50,6 +50,15 @@ We set the Networking options
 
 We leave the default values in the rest of options and finally we press the Create button 
 
+![image](https://github.com/user-attachments/assets/01403a13-d7f4-4011-b93c-cc6030f064c5)
+
+We press the Go to resource button
+
+![image](https://github.com/user-attachments/assets/5b056a20-f1ac-4886-9475-8fbcbda5875f)
+
+We select the Query Editor and connect to the database
+
+![image](https://github.com/user-attachments/assets/3e9d390c-5c26-4119-b9a2-b659a95e8607)
 
 
 ## 2. Connect to SQL Server with SSMS
