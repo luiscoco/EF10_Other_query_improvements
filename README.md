@@ -199,6 +199,8 @@ We are going to define the code for the new EF10 features
 
 EF10 now supports translating the combination of DateOnly and TimeOnly into a proper SQL DATETIME type.
 
+**EF10 C# code**
+
 ```csharp
 var eventsWithDateTime = context.Events
     .Select(e => new
@@ -208,6 +210,8 @@ var eventsWithDateTime = context.Events
     })
     .ToList();
 ```
+
+**SQL Query**
 
 ```sql
 SELECT [e].[City],
@@ -225,6 +229,8 @@ Prior to EF10, multiple .Take() calls would result in nested or redundant SQL.
 
 Now EF optimizes it into a single LIMIT/TOP clause.
 
+**EF10 C# code**
+
 ```csharp
 var topEvent = context.Events
     .OrderBy(e => e.EventDate)
@@ -232,6 +238,8 @@ var topEvent = context.Events
     .Take(1)
     .FirstOrDefault();
 ```
+
+**SQL Query**
 
 ```sql
 SELECT TOP(1) [e].[Id], [e].[City], [e].[EventDate], [e].[EventTime]
@@ -245,6 +253,8 @@ ORDER BY [e].[EventDate];
 
 Now efficiently translates .Count on a navigation collection (ICollection<T>) without loading related entities.
 
+**EF10 C# code**
+
 ```csharp
 var eventAttendeesCount = context.Events
     .Select(e => new
@@ -255,6 +265,8 @@ var eventAttendeesCount = context.Events
     .ToList();
 ```
 
+**SQL Query**
+
 ```sql
 SELECT [e].[City],
        (SELECT COUNT(*)
@@ -264,6 +276,31 @@ FROM [Events] AS [e];
 ```
 
 ![image](https://github.com/user-attachments/assets/09351232-9fbd-4900-ab3e-b1acb36c5225)
+
+### 9.4. Optimization for MIN/MAX over DISTINCT
+
+EF10 can now combine DISTINCT with MIN or MAX efficiently — previously might fetch all distinct values and calculate in memory.
+
+**EF10 C# code**
+
+```csharp
+var earliestDistinctEventDate = context.Events
+    .Select(e => e.EventDate)
+    .Distinct()
+    .Min();
+```
+
+**SQL Query**
+
+```sql
+SELECT MIN([t].[EventDate]) AS [MinEventDate]
+FROM (
+    SELECT DISTINCT [e].[EventDate]
+    FROM [Events] AS [e]
+) AS [t];
+```
+
+![image](https://github.com/user-attachments/assets/3ccf6ab6-2d61-4bc0-bd9a-00fa4c287f69)
 
 
 ### 9. Source code 
