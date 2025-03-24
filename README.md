@@ -18,7 +18,7 @@ https://learn.microsoft.com/en-us/ssms/download-sql-server-management-studio-ssm
 
 We connect to the SSMS with the password: Luiscoco123456
 
-![image](https://github.com/user-attachments/assets/5a42df3c-79c4-4377-bba4-8434f954a427)
+
 
 ## 3. Create the Database and Tables with SSMS
 
