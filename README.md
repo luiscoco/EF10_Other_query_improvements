@@ -253,7 +253,29 @@ Console.WriteLine("EF10 feature demonstrations completed.");
 
 
 
+## 11. Modify the project configuration adding a appsettings.json file to define the database connection string
 
+Please select the soultion frame
+
+![image](https://github.com/user-attachments/assets/0f3eb6e5-b9c9-4d03-804d-0e5fa71da580)
+
+Then we create a new csharp appsettings.json file
+
+![image](https://github.com/user-attachments/assets/56b39f22-8ca7-4aa8-89f3-305948393f02)
+
+![image](https://github.com/user-attachments/assets/719cfcf4-c500-419f-b098-20f5605011f7)
+
+We input the database string configuration in the appsettings.json file
+
+```json
+{
+    "ConnectionStrings": {
+      "DefaultConnection": "Server=localhost,1433;Database=Ef10EventsDb;User Id=sa;Password=Luiscoco123456;TrustServerCertificate=True;"
+    }
+}
+```
+
+![image](https://github.com/user-attachments/assets/ce6fcfe2-5eb2-496d-9fe5-44060e2ff83d)
 
 
 
