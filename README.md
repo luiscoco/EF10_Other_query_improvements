@@ -6,7 +6,9 @@ https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-10.0/whatsnew#linq
 
 ## 1. Create Azure SQL Server database
 
+Please follow the steps explained in this github repo:
 
+https://github.com/luiscoco/Azure_SQL_database_sample
 
 ## 2. Connect to SQL Server with SSMS
 
