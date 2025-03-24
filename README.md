@@ -1,4 +1,24 @@
-# EF10_Other_query_improvements
+# Entity Framework v10: Other Query Improvements
+
+For more information about this post visit this site:
+
+https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-10.0/whatsnew#linq-and-sql-translation
+
+## 1. Create Azure SQL Server database
+
+
+
+## 2. Connect to SQL Server with SSMS
+
+Download SSMS (SQL Server Management Studio) and install it:
+
+https://learn.microsoft.com/en-us/ssms/download-sql-server-management-studio-ssms
+
+We connect to the SSMS with the password: Luiscoco123456
+
+
+
+## 3. Create the Database and Tables with SSMS
 
 ```sql
 -- Create the database
