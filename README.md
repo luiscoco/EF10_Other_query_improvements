@@ -93,7 +93,7 @@ SELECT TOP (1000) [Id]
 
 ![image](https://github.com/user-attachments/assets/45b835d9-8ca4-47cd-b558-aa3052d40ca1)
 
-## 3. Create a new C# Console application with dotnet
+## 4. Create a new C# Console application with dotnet
 
 We navigate in our hard disk to the location where we would like to create the new C# Console application
 
@@ -105,7 +105,7 @@ dotnet new console -n EF10_Other_query_improvements -f net10.0
 
 After creating the application we review the generated code in the Command Prompt
 
-## 4. Download and Install Visual Studio Code and open the C# console application
+## 5. Download and Install Visual Studio Code and open the C# console application
 
 Navigate to the VSCode web page and download it for Windows Operating System
 
@@ -121,7 +121,7 @@ Navigate to the C# console application location and open it with this command
 code .
 ```
 
-## 5. Install Nuget packages
+## 6. Install Nuget packages
 
 In VSCode in the Terminal window run these commands to install the Entity Framework Nuget packages
 
@@ -134,11 +134,11 @@ We open the csproj file and we confirm both Nuget libraries were already install
 
 ![image](https://github.com/user-attachments/assets/5ab7a35f-3cbf-4210-9bff-e46c803b2cfd)
 
-## 6. Create the folders and files structure
+## 7. Create the folders and files structure
 
 ![image](https://github.com/user-attachments/assets/40aa9be4-b8f2-451c-adde-c944a5236ccd)
 
-## 7. Input the Models source code
+## 8. Input the Models source code
 
 ```csharp
 using System;
@@ -174,7 +174,7 @@ namespace EF10_Other_query_improvements.Models
 }
 ```
 
-## 8. Input the Data source code
+## 9. Input the Data source code
 
 ```csharp
 using EF10_Other_query_improvements.Models;
@@ -204,12 +204,12 @@ namespace EF10_Other_query_improvements.Data
 }
 ```
 
-## 9. Input the Program.cs source code
+## 10. Input the Program.cs source code
 
 We are going to define the code for the new EF10 features
 
 
-### 9.1. Translation for DateOnly.ToDateTime(TimeOnly)
+### 10.1. Translation for DateOnly.ToDateTime(TimeOnly)
 
 EF10 now supports translating the combination of DateOnly and TimeOnly into a proper SQL DATETIME type.
 
@@ -237,7 +237,7 @@ FROM [Events] AS [e];
 
 ![image](https://github.com/user-attachments/assets/3f52c54d-b634-4c8d-80ce-0ddaa3135352)
 
-### 9.2. Optimization for multiple consecutive .Take() calls
+### 10.2. Optimization for multiple consecutive .Take() calls
 
 Prior to EF10, multiple .Take() calls would result in nested or redundant SQL.
 
@@ -263,7 +263,7 @@ ORDER BY [e].[EventDate];
 
 ![image](https://github.com/user-attachments/assets/3d2a9db2-be39-4ba3-b7d8-2125f49964c6)
 
-### 9.3. Optimization for Count on ICollection<T>
+### 10.3. Optimization for Count on ICollection<T>
 
 Now efficiently translates .Count on a navigation collection (ICollection<T>) without loading related entities.
 
@@ -291,7 +291,7 @@ FROM [Events] AS [e];
 
 ![image](https://github.com/user-attachments/assets/09351232-9fbd-4900-ab3e-b1acb36c5225)
 
-### 9.4. Optimization for MIN/MAX over DISTINCT
+### 10.4. Optimization for MIN/MAX over DISTINCT
 
 EF10 can now combine DISTINCT with MIN or MAX efficiently — previously might fetch all distinct values and calculate in memory.
 
@@ -315,6 +315,37 @@ FROM (
 ```
 
 ![image](https://github.com/user-attachments/assets/3ccf6ab6-2d61-4bc0-bd9a-00fa4c287f69)
+
+### 10.5. Translation for DatePart.Microsecond and DatePart.Nanosecond
+
+EF.Functions.DatePart() now supports new parts like "microsecond" and "nanosecond" — this was unsupported in earlier versions.
+
+**EF10 C# code**
+
+```csharp
+var eventMicroseconds = context.Events
+    .Select(e => EF.Functions.DatePart("microsecond", e.EventTime))
+    .ToList();
+
+var eventNanoseconds = context.Events
+    .Select(e => EF.Functions.DatePart("nanosecond", e.EventTime))
+    .ToList();
+```
+
+**SQL Query**
+
+```sql
+SELECT DATEPART(MICROSECOND, [e].[EventTime]) AS [Microseconds]
+FROM [Events] AS [e];
+
+SELECT DATEPART(NANOSECOND, [e].[EventTime]) AS [Nanoseconds]
+FROM [Events] AS [e];
+```
+
+![image](https://github.com/user-attachments/assets/fb5940f5-32a3-404a-bc30-d23e3161fcc8)
+
+![image](https://github.com/user-attachments/assets/4615a71c-22c0-4c46-9c82-3a784ce689ce)
+
 
 
 ### 9. Source code 
