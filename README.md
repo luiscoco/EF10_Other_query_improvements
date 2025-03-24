@@ -430,11 +430,15 @@ var eventsInCity = context.Events
 Console.WriteLine("EF10 feature demonstrations completed.");
 ```
 
-## 10. Run the application in VSCode and verify the results
+## 11. Run the application in VSCode and verify the results
 
+Execute this command in the Terminal for running the application
 
+```
+dotnet run
+```
 
-## 11. Modify the project configuration adding a appsettings.json file to define the database connection string
+## 12. Modify the project configuration adding a appsettings.json file to define the database connection string
 
 Please select the soultion frame
 
@@ -531,7 +535,7 @@ dotnet run
 
 ![image](https://github.com/user-attachments/assets/30c4563f-f224-495a-b89d-4cb392f28b82)
 
-## 12. How to debug your C# Console application in VSCode
+## 13. How to debug your C# Console application in VSCode
 
 First we have to modify the csproj file and add the following item in the project tag:
 
