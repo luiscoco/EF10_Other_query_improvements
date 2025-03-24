@@ -10,6 +10,48 @@ Please follow the steps explained in this github repo:
 
 https://github.com/luiscoco/Azure_SQL_database_sample
 
+We first search for Azure SQL resource
+
+![image](https://github.com/user-attachments/assets/1e18d42e-2382-4212-bd68-61412d7e0720)
+
+We press the Create Azure SQL resource button
+
+![image](https://github.com/user-attachments/assets/148d7f15-07e8-421b-8df1-64c99781f367)
+
+We have to create a Single database 
+
+![image](https://github.com/user-attachments/assets/69f566b6-393b-4868-a6ee-b5bed6b7afc8)
+
+We press the Apply Offer button
+
+![image](https://github.com/user-attachments/assets/e0d6209e-62bd-4cee-8fca-e557b2418ab3)
+
+We set the subscription name, resource group name, the database name
+
+![image](https://github.com/user-attachments/assets/19343c8b-4b3a-41aa-b77f-4608bc04766a)
+
+We also have to create a server name
+
+![image](https://github.com/user-attachments/assets/7495643e-985e-4ecf-8a96-6d73b1c0cfe9)
+
+![image](https://github.com/user-attachments/assets/157526de-7503-48cf-935b-59144ff1e528)
+
+![image](https://github.com/user-attachments/assets/17bcf7c6-735d-4d4c-998f-fe1f0a28ed58)
+
+When we select the free option the Auto-pause the database until next month option is automatically selected
+
+![image](https://github.com/user-attachments/assets/ebf9a7a3-57f2-4348-be12-046ff129aa0e)
+
+We set the Networking options
+
+![image](https://github.com/user-attachments/assets/6983865f-fb9a-4166-a6e4-8b3425ac3275)
+
+![image](https://github.com/user-attachments/assets/fe0a18c5-c165-4972-9c6e-e92e8ed4c0c2)
+
+We leave the Security options as t
+
+We press on the Review and Create 
+
 ## 2. Connect to SQL Server with SSMS
 
 Download SSMS (SQL Server Management Studio) and install it:
@@ -455,7 +497,7 @@ We input the database string configuration in the appsettings.json file
 ```json
 {
     "ConnectionStrings": {
-      "DefaultConnection": "Server=localhost,1433;Database=Ef10EventsDb;User Id=sa;Password=Luiscoco123456;TrustServerCertificate=True;"
+      "DefaultConnection": "Server=localhost,1433;Database=Ef10EventsDb;User Id=adminluis;Password=Luiscoco123456;TrustServerCertificate=True;"
     }
 }
 ```
