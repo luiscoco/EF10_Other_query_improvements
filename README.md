@@ -114,7 +114,11 @@ Server=tcp:myserverluis.database.windows.net,1433;Initial Catalog=Ef10EventsDb;P
 
 ![image](https://github.com/user-attachments/assets/1dd2351d-3db6-4871-8231-7c3ce4f7f2cd)
 
-## 3. Create the Database and Tables with SSMS
+## 3. Create the Database and Tables with Azure SQL Query Editor
+
+We select the Query Editor menu option inside the already created Azure SQL Database
+
+![image](https://github.com/user-attachments/assets/f59af93e-adb0-4fe9-9199-a224d79aeff8)
 
 We run this sql query for creating a new database
 
