@@ -26,7 +26,7 @@ We press the Apply Offer button
 
 ![image](https://github.com/user-attachments/assets/e0d6209e-62bd-4cee-8fca-e557b2418ab3)
 
-We set the subscription name, resource group name, the database name
+We set the subscription name, resource group name, region and the database name
 
 ![image](https://github.com/user-attachments/assets/19343c8b-4b3a-41aa-b77f-4608bc04766a)
 
@@ -48,9 +48,9 @@ We set the Networking options
 
 ![image](https://github.com/user-attachments/assets/fe0a18c5-c165-4972-9c6e-e92e8ed4c0c2)
 
-We leave the Security options as t
+We leave the default values in the rest of options and finally we press the Create button 
 
-We press on the Review and Create 
+
 
 ## 2. Connect to SQL Server with SSMS
 
