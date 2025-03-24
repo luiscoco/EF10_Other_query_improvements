@@ -62,12 +62,16 @@ INSERT INTO Attendees (Name, EventId) VALUES
 ('Eve', 3);
 ```
 
+We verify the database and tables created running these sql queries
+
 ```sql
 SELECT TOP (1000) [Id]
       ,[Name]
       ,[EventId]
   FROM [Ef10EventsDb].[dbo].[Attendees]
 ```
+
+![image](https://github.com/user-attachments/assets/177085fb-caf9-42ee-ab03-07310e0069e9)
 
 ```sql
 SELECT TOP (1000) [Id]
@@ -76,6 +80,8 @@ SELECT TOP (1000) [Id]
       ,[EventTime]
   FROM [Ef10EventsDb].[dbo].[Events]
 ```
+
+![image](https://github.com/user-attachments/assets/45b835d9-8ca4-47cd-b558-aa3052d40ca1)
 
 ## 3. Create a new C# Console application with dotnet
 
