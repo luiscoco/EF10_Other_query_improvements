@@ -308,9 +308,44 @@ var host = Host.CreateDefaultBuilder(args)
     })
     .Build();
 
+// Using dependency injection correctly:
 using var scope = host.Services.CreateScope();
-var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
 ```
 
+We also have to modify the DbContext file
 
+```csharp
+using EF10_Other_query_improvements.Models;
+using Microsoft.EntityFrameworkCore;
 
+namespace EF10_Other_query_improvements.Data
+{
+    public class AppDbContext : DbContext
+    {
+        public AppDbContext(DbContextOptions<AppDbContext> options)
+            : base(options)
+        {
+        }
+
+        public DbSet<Event> Events { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Event>().OwnsMany(e => e.Attendees);
+        }
+    }
+}
+```
+
+![image](https://github.com/user-attachments/assets/8bf78f61-3bc0-4041-8d50-4ef4b8d2a058)
+
+We run the application with the following command and we verify the results
+
+```
+dotnet run
+```
+
+![image](https://github.com/user-attachments/assets/0878e200-0ce4-4043-ad87-a03ff4d08610)
+
+![image](https://github.com/user-attachments/assets/30c4563f-f224-495a-b89d-4cb392f28b82)
