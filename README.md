@@ -177,6 +177,10 @@ SELECT TOP (1000) [Id]
 
 ![image](https://github.com/user-attachments/assets/73f00191-3532-4afc-9d86-90284ed32fdf)
 
+We can also run the above sql queries from VSCode
+
+![image](https://github.com/user-attachments/assets/1e58b37e-357e-45e4-9499-c4263d063a61)
+
 ## 4. Create a new C# Console application with dotnet
 
 We navigate in our hard disk to the location where we would like to create the new C# Console application
