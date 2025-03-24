@@ -60,6 +60,9 @@ We select the Query Editor and connect to the database
 
 ![image](https://github.com/user-attachments/assets/3e9d390c-5c26-4119-b9a2-b659a95e8607)
 
+We have now available a Query window to input and run the SQL commands
+
+![image](https://github.com/user-attachments/assets/32bda14e-918d-420a-9392-33f025721f3b)
 
 ## 2. Connect to SQL Server with SSMS
 
