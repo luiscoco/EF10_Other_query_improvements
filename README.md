@@ -192,6 +192,82 @@ namespace EF10_Other_query_improvements.Data
 
 ## 9. Input the Program.cs source code
 
+We are going to define the code for the new EF10 features
+
+
+### 9.1. Translation for DateOnly.ToDateTime(TimeOnly)
+
+EF10 now supports translating the combination of DateOnly and TimeOnly into a proper SQL DATETIME type.
+
+```csharp
+var eventsWithDateTime = context.Events
+    .Select(e => new
+    {
+        e.City,
+        EventFullDateTime = e.EventDate.ToDateTime(e.EventTime)
+    })
+    .ToList();
+```
+
+```sql
+SELECT [e].[City],
+       DATEADD(MILLISECOND, 
+               DATEDIFF(MILLISECOND, '00:00:00', CAST([e].[EventTime] AS time)), 
+               CAST([e].[EventDate] AS datetime)) AS [EventFullDateTime]
+FROM [Events] AS [e];
+```
+
+![image](https://github.com/user-attachments/assets/3f52c54d-b634-4c8d-80ce-0ddaa3135352)
+
+### 9.2. Optimization for multiple consecutive .Take() calls
+
+Prior to EF10, multiple .Take() calls would result in nested or redundant SQL.
+
+Now EF optimizes it into a single LIMIT/TOP clause.
+
+```csharp
+var topEvent = context.Events
+    .OrderBy(e => e.EventDate)
+    .Take(2)
+    .Take(1)
+    .FirstOrDefault();
+```
+
+```sql
+SELECT TOP(1) [e].[Id], [e].[City], [e].[EventDate], [e].[EventTime]
+FROM [Events] AS [e]
+ORDER BY [e].[EventDate];
+```
+
+![image](https://github.com/user-attachments/assets/3d2a9db2-be39-4ba3-b7d8-2125f49964c6)
+
+### 9.3. Optimization for Count on ICollection<T>
+
+Now efficiently translates .Count on a navigation collection (ICollection<T>) without loading related entities.
+
+```csharp
+var eventAttendeesCount = context.Events
+    .Select(e => new
+    {
+        e.City,
+        AttendeesCount = e.Attendees.Count
+    })
+    .ToList();
+```
+
+```sql
+SELECT [e].[City],
+       (SELECT COUNT(*)
+        FROM [Attendees] AS [a]
+        WHERE [e].[Id] = [a].[EventId]) AS [AttendeesCount]
+FROM [Events] AS [e];
+```
+
+![image](https://github.com/user-attachments/assets/09351232-9fbd-4900-ab3e-b1acb36c5225)
+
+
+### 9. Source code 
+
 ```csharp
 using EF10_Other_query_improvements.Data;
 using Microsoft.EntityFrameworkCore;
