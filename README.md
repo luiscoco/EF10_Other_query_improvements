@@ -4,6 +4,16 @@ For more information about this post visit this site:
 
 https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-10.0/whatsnew#linq-and-sql-translation
 
+## Prerequisite: install .NET 10 
+
+We download .NET 10 from this website:
+
+https://dotnet.microsoft.com/en-us/download/dotnet/10.0
+
+![image](https://github.com/user-attachments/assets/2d967cec-2407-4f67-95c6-de86fe486563)
+
+We install the downloaded file double clicking on it
+
 ## 1. Create Azure SQL Server database
 
 Please follow the steps explained in this github repo:
