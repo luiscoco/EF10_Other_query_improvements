@@ -111,11 +111,18 @@ code .
 
 In VSCode in the Terminal window run these commands to install the Entity Framework Nuget packages
 
+```
+dotnet add package Microsoft.EntityFrameworkCore --version 10.0.0-preview.2.25163.8
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 10.0.0-preview.2.25163.8
+```
 
+We open the csproj file and we confirm both Nuget libraries were already installed in our application
+
+![image](https://github.com/user-attachments/assets/5ab7a35f-3cbf-4210-9bff-e46c803b2cfd)
 
 ## 6. Create the folders and files structure
 
-
+![image](https://github.com/user-attachments/assets/40aa9be4-b8f2-451c-adde-c944a5236ccd)
 
 ## 7. Input the Models source code
 
