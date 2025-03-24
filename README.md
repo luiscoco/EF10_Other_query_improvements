@@ -64,7 +64,7 @@ We have now available a Query window to input and run the SQL commands
 
 ![image](https://github.com/user-attachments/assets/32bda14e-918d-420a-9392-33f025721f3b)
 
-## 2. Connect to SQL Server with SSMS
+## 2. Connect to Azure SQL database with SSMS or VSCode
 
 Download SSMS (SQL Server Management Studio) and install it:
 
@@ -83,6 +83,24 @@ Login: adminluis
 Password:Luiscoco123456
 
 ![image](https://github.com/user-attachments/assets/97b1a886-5a93-4aaa-8ed8-cea5425c135c)
+
+For connecting to the Azure SQL database from VSCode install this extension
+
+![image](https://github.com/user-attachments/assets/822fd8b6-4bda-4d40-b518-6064851de640)
+
+We have to click on SQL Server button in left hand side menu and we create a new connection clicking on the + button
+
+![image](https://github.com/user-attachments/assets/ef468ef8-190c-4fcd-8b3b-8105b9b64e6e)
+
+We input the Azure SQL database connection information. 
+
+We select the connection string option and we press the connect button
+
+```
+Server=tcp:myserverluis.database.windows.net,1433;Initial Catalog=Ef10EventsDb;Persist Security Info=False;User ID=adminluis;Password=Luiscoco123456;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
+```
+
+![image](https://github.com/user-attachments/assets/8b595829-5903-4764-bf9b-88d0c432bd3c)
 
 ## 3. Create the Database and Tables with SSMS
 
