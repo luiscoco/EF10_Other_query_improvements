@@ -344,11 +344,34 @@ FROM [Events] AS [e];
 
 ![image](https://github.com/user-attachments/assets/fb5940f5-32a3-404a-bc30-d23e3161fcc8)
 
-![image](https://github.com/user-attachments/assets/4615a71c-22c0-4c46-9c82-3a784ce689ce)
+![image](https://github.com/user-attachments/assets/797a34be-4f85-4497-85cf-c64fda7014db)
 
+### 10.6. Simplified parameter usage
 
+EF10 improves parameter naming and reuse for better SQL clarity and caching efficiency.
 
-### 9. Source code 
+**EF10 C# code**
+
+```csharp
+var cityParam = "Madrid";
+var eventsInCity = context.Events
+    .Where(e => e.City == cityParam)
+    .ToList();
+```
+
+**SQL Query**
+
+```sql
+DECLARE @__cityParam_0 nvarchar(max) = N'Madrid';
+
+SELECT [e].[Id], [e].[City], [e].[EventDate], [e].[EventTime]
+FROM [Events] AS [e]
+WHERE [e].[City] = @__cityParam_0;
+```
+
+![image](https://github.com/user-attachments/assets/d5290bea-d557-4770-b1e3-f004204fd5f4)
+
+### 10.7. Whole EF10 new features source code 
 
 ```csharp
 using EF10_Other_query_improvements.Data;
