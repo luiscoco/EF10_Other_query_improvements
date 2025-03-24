@@ -258,7 +258,7 @@ namespace EF10_Other_query_improvements.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=localhost,1433;Database=Ef10EventsDb;User Id=sa;Password=Luiscoco123456;TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer("Server=tcp:myserverluis.database.windows.net,1433;Initial Catalog=Ef10EventsDb;Persist Security Info=False;User ID=adminluis;Password=Luiscoco123456;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
             optionsBuilder.LogTo(Console.WriteLine);
         }
 
